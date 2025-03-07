@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧农产品管理平台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: '微软雅黑', sans-serif;
+            background: linear-gradient(135deg, #f5f5f5, #e8f5e9);
+        }
+
+        /* 导航栏 */
+        .navbar {
+            background: #2e7d32;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: #81c784;
+        }
+
+        /* 主体板块 */
+        .section {
+            padding: 6rem 2rem 3rem;
+            min-height: 100vh;
+            display: none;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section.active {
+            display: flex;
+        }
+
+        /* 公司板块 */
+        #company {
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+                        url('./微信图片_20250306194542.jpg');
+        }
+
+        #farmer {
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+                        url('./微信图片_20250306194542.jpg');
+        }
+
+        /* 用户板块 */
+        #user {
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+                        url('./微信图片_20250306194542.jpg');
+        }
+
+        /* 登录面板 */
+        .login-panel {
+            background: rgba(255,255,255,0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .login-title {
+            color: #2e7d32;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .login-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .login-btn {
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .wechat-btn {
+            background: #09b83e;
+            color: white;
+        }
+
+        .phone-btn {
+            background: #2196f3;
+            color: white;
+        }
+
+        .alipay-btn {
+            background: #1677ff;
+            color: white;
+        }
+
+        /* 内容卡片 */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#company" class="nav-link">公司平台</a>
+            <a href="#farmer" class="nav-link">农户服务</a>
+            <a href="#user" class="nav-link">用户中心</a>
+        </div>
+    </nav>
+
+    <!-- 公司板块 -->
+    <section id="company" class="section active">
+        <div class="login-panel">
+            <h2 class="login-title">智慧农业管理平台登录</h2>
+            <div class="login-methods">
+                <button class="login-btn wechat-btn">
+                    <i class="fab fa-weixin"></i>
+                    微信登录
+                </button>
+                <button class="login-btn phone-btn">
+                    <i class="fas fa-mobile-alt"></i>
+                    手机号登录
+                </button>
+                <button class="login-btn alipay-btn">
+                    <i class="fab fa-alipay"></i>
+                    支付宝登录
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 农户板块 -->
+    <section id="farmer" class="section">
+        <div class="card-container">
+            <div class="card">
+                <img src="./微信图片_20250306194542.jpg" alt="农户数据看板">
+                <h3>智能种植管理</h3>
+                <p>实时监测作物生长数据，提供智能化种植建议</p>
+            </div>
+            <div class="card">
+                <img src="./微信图片_20250306194542.jpg" alt="物联网设备">
+                <h3>物联网设备管理</h3>
+                <p>连接各类农业传感器，实现精准农业管理</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户板块 -->
+    <section id="user" class="section">
+        <div class="card-container">
+            <div class="card">
+                <img src="./微信图片_20250306194542.jpg" alt="新鲜农产品">
+                <h3>优质农产品直供</h3>
+                <p>溯源系统保障，新鲜直达消费者</p>
+            </div>
+            <div class="card">
+                <img src="./微信图片_20250306194542.jpg" alt="订单追踪">
+                <h3>全程物流追踪</h3>
+                <p>实时查看订单状态，掌握配送进度</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 导航切换功能
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.querySelector(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html> 
